@@ -1,29 +1,27 @@
 import React, { useState } from 'react';
 import { FaPlus } from "react-icons/fa6";
 
-const Add = ({ addNewCard }) => {
+const Add = ({ setCards }) => {
     const [showForm, setShowForm] = useState(false);
-    const [formData, setFormData] = useState({ description: '' });
+    const [description, setDescription] = useState("");
 
     // Toggle form visibility
     const handleButtonClick = (e) => {
         setShowForm(!showForm);
-        e.preventDefault();
-    };
-
-    // Handle form field changes
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData.description.trim() !== '') {
-            addNewCard(formData);  // Pass new card data to Foreground.jsx
-            setFormData({ description: '' }); // Reset form fields
-            setShowForm(false); // Hide form after submission
-        }
+        if(!description.trim()) return;
+        setCards(prevCards => {
+            const updatedCards = [...prevCards, { description }];
+            localStorage.setItem("cards", JSON.stringify(updatedCards));
+            return updatedCards;
+        });
+
+        setDescription("");
+        setShowForm(false);
     };
 
     return (
@@ -57,8 +55,8 @@ const Add = ({ addNewCard }) => {
                                 <textarea
                                     required
                                     name="description"
-                                    value={formData.description}
-                                    onChange={handleChange}
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
                                     placeholder="Enter details..."
                                     className="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400"
                                     rows="4"
