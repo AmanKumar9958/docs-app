@@ -5,9 +5,6 @@ import { useState } from 'react'
 
 const Foreground = () => {
     const [cards, setCards] = useState([
-        {
-            description: "My name is Aman Kumar",
-        }
     ]);
 
     const addNewCard = (newCard) => {
