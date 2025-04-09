@@ -2,7 +2,7 @@
 
 **Docs Saver** is a simple and user-friendly web application that allows users to write and save their important documents using a card-based layout. It's ideal for storing personal notes, reminders, or short documents in an organized way.
 
-![Docs Keeper Screenshot](![image](https://github.com/AmanKumar9958/docs-app/blob/main/public/img1.png))
+![Screenshot](https://github.com/AmanKumar9958/docs-app/blob/main/public/img1.png?raw=true)
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## 📸 Screenshot
 
-![Screenshot](![image](https://github.com/AmanKumar9958/docs-app/blob/main/public/img1.png))
+![Screenshot](https://github.com/AmanKumar9958/docs-app/blob/main/public/img1.png?raw=true)
 
 ---
 
