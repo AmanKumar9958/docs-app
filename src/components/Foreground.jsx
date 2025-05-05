@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Card from './Card'
 import Add from './Add'
 import { useState } from 'react'
+import Login from './Login'
 
 const Foreground = () => {
     const [cards, setCards] = useState([]);
@@ -32,6 +33,8 @@ const Foreground = () => {
             ))}
 
             <Add setCards={setCards}/>
+
+            <Login />
         </div>
     )
 }
